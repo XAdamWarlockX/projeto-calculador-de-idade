@@ -1,0 +1,27 @@
+@media (max-width: 600px) {
+    body{
+        padding: 20px;
+    }
+
+    .container{
+        width: 350px;
+    }
+
+    .container .informacoes{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container .informacoes .campos .campo .input{
+        width: 95px;
+    }
+
+    .container .informacoes .btn{
+        display: flex;
+        justify-content: center;
+    }
+
+    .container .resultados .resultado{
+        font-size: 40px;
+    }
+}

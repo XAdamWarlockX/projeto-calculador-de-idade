@@ -1,0 +1,146 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 86%);
+    /* background-color: black; */
+    font-family: 'Poppins', sans-serif;
+}
+
+.container{
+    width: 500px;
+    padding: 30px;
+    border-radius:  10px 10px 80px 10px;
+    background-color: var(--cor-branca);
+}
+
+.container .informacoes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--cor-cinza-claro);
+    position: relative;
+}
+
+.container .informacoes .campos {
+    display: flex;
+    gap: 15px;
+}
+
+.container .informacoes .campos .campo{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container .informacoes .campos .campo .label{
+    font-size: 8px;
+}
+
+.container .informacoes .campos .campo .input{
+    width: 110px;
+    height: 45px;
+    padding: 12px;
+    border-radius: 5px;
+    font-weight: 800;
+    
+}
+
+.container .informacoes .campos .campo .input:hover{
+    border-color: var(--cor-roxa);
+    cursor: pointer;
+}
+
+.container .informacoes .campos .campo .input::-webkit-inner-spin-button{
+    appearance: none;
+}
+
+.container .informacoes .btn{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.container .informacoes .btn #botao{
+    width: 60px;
+    height: 60px;
+    background: var(--cor-roxa) url('../images/icon-arrow.svg') no-repeat center ;
+    background-size: 25px 25px;
+    border-radius: 50px;
+    border-style: none;
+    position: absolute;
+    bottom: -30px;
+    cursor: pointer;
+}
+
+.container .informacoes .btn #botao:hover{
+    background-color: black;
+    transition: 0.2s ease-in-out;
+}
+
+.container .resultados{
+    padding: 30px 20px 0px 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-style: italic;
+}
+
+.container .resultados .resultado{
+    display: flex;
+    gap: 10px;
+    font-size: 50px;
+}
+
+.container .resultados .resultado .cor-numero{
+    color: var(--cor-roxa);
+}
+
+/* Validando campo */
+
+.container .informacoes .campo .cor-label{
+    color: var(--cor-cinza);
+}
+
+.container .informacoes .campo .cor-borda{
+    border: 2px solid var(--cor-cinza-claro);
+}
+
+.container .informacoes .campo .cor-borda:focus{
+    outline: none;
+}
+
+.container .informacoes .campo .cor-borda-erro{
+    border: 2px solid var(--cor-vermelha);
+}
+
+.container .informacoes .campo .cor-borda-erro:focus{
+    outline: none;
+}
+
+.container .informacoes .campo .cor-erro{
+    color: var(--cor-vermelha);
+}
+
+.container .informacoes .campo .campo-invalido,
+.container .informacoes .campo .campo-obrigatorio{
+    font-size: 10px;
+    color: var(--cor-vermelha);
+}
+
+.container .informacoes .campo .ocultar{
+    display: none;
+}
+
+/* .container .informacoes .campos .ocultar{
+    display: none;
+} */
+
+.container .informacoes .campos .mostrar{
+    display: block;
+}
+
+/* .container .informacoes .campos .mostrar{
+    display: block;
+} */

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculador de Idade</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="src/css/reset.css">
+    <link rel="stylesheet" href="src/css/estilo.css">
+    <link rel="stylesheet" href="src/css/variaveis.css">
+    <link rel="stylesheet" href="src/css/responsivo.css">
+</head>
+
+<body>
+    <main class="container">
+        <div class="informacoes">
+            <section class="campos">
+                <div class="campo">
+                    <label class="label cor-label" for="input-dia">DIA</label>
+                    <input type="number" maxlength="2" class="input cor-borda" id="input-dia" placeholder="DD">
+    
+                    <p class="campo-invalido ocultar">Dia invalido</p>
+                    <p class="campo-obrigatorio ocultar">Campo obrigatorio</p>
+                </div>
+    
+                <div class="campo">
+                    <label class="label cor-label" for="input-mes">MÊS</label>
+                    <input type="number" class="input cor-borda" id="input-mes" placeholder="MM">
+    
+                    <p class="campo-invalido ocultar">Mês invalido</p>
+                    <p class="campo-obrigatorio ocultar">Campo obrigatorio</p>
+                </div>
+    
+                <div class="campo">
+                    <label class="label cor-label" for="input-ano">ANO</label>
+                    <input type="number" class="input cor-borda" id="input-ano" placeholder="AAAA">
+                    
+                    <p class="campo-invalido ocultar">Ano invalido</p>
+                    <p class="campo-obrigatorio ocultar">Campo obrigatorio</p>
+                </div>
+            </section>
+            
+            <div class="btn">
+                <button id="botao"></button>
+            </div>
+        </div>
+
+        <div class="botao">
+        </div>
+
+        <div class="resultados">
+            <div class="resultado">
+                <span class="cor-numero" id="anos"> - - </span>
+                <p>anos</p>
+            </div>
+
+            <div class="resultado">
+                <span class="cor-numero" id="meses"> - - </span>
+                <p>meses</p>
+            </div>
+
+            <div class="resultado">
+                <span class="cor-numero" id="dias"> - - </span>
+                <p>dias</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="src/js/index.js"></script>
+</body>
+
+</html>
