@@ -67,10 +67,12 @@ const diasMesPassado = new Date(anoAtual, mesAtual - 1, 0).getDate()
 const mesNascimento = Number(inputMes.value)
 const calcularMeses = () => {
     const diferencaDeMeses = 12 - mesNascimento
-
-    if (diaNascimento <= diaAtual) {
+    
+    if (mesNascimento === mesAtual) {
+        return diferencaDeMeses - 11
+    } else if(diaNascimento <= diaAtual){
         return diferencaDeMeses + 1
-    } else {
+    }else {
         return diferencaDeMeses
     }
 }
