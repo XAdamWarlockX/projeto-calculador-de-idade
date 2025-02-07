@@ -1,12 +1,12 @@
-const inputDia = document.getElementById("input-dia")
-const inputMes = document.getElementById("input-mes")
-const inputAno = document.getElementById("input-ano")
+import { inputDia, diaNascimento, pegarDiaNascimento } from "./utils/calcularDia.js"
+import { inputMes, mesNascimento, pegarMesNascimento } from "./utils/calcularMes.js"
+import { inputAno, anoNascimento, pegarAnoNascimento } from "./utils/calcularAno.js"
 
-const labels = document.querySelectorAll(".label")
+import { renderDia } from "./objects/renderDia.js"
+import { renderMes } from "./objects/renderMes.js"
+import { renderAno } from "./objects/renderAno.js"
+
 const inputs = document.querySelectorAll(".input")
-const camposInvalidos = document.querySelectorAll(".campo-invalido")
-const camposObrigatorios = document.querySelectorAll(".campo-obrigatorio")
-
 const btn = document.getElementById("botao")
 
 // Botão que renderiza os calculos
@@ -18,7 +18,6 @@ btn.addEventListener('click', () => {
 inputs.forEach(input => {
     input.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
-            // this.blur()
             input.blur()
             calcularInfos()
         }
@@ -37,73 +36,20 @@ inputsDiaMes.forEach(inputs => {
 })
 
 inputAno.addEventListener("input", () => {
-    if (inputAno.value.length > 4){
+    if (inputAno.value.length > 4) {
         inputAno.value = inputAno.value.slice(0, 4)
     }
 })
 
-// Difinindo datas que serão usadas
-const dataAtual = new Date()
-const [diaAtual, mesAtual, anoAtual] = [
-    dataAtual.getDate(),
-    dataAtual.getMonth() + 1,
-    dataAtual.getFullYear()
-]
-
 const calcularInfos = () => {
-    // Calculando dias vividos
-const diaNascimento = Number(inputDia.value)
-const calcularDias = () => {
-    if (diaAtual >= diaNascimento) {
-        return diaAtual - diaNascimento
-    } else {
-        return diasMesPassado - diaNascimento + diaAtual
-    }
-}
+    const labels = document.querySelectorAll(".label")
+    const camposInvalidos = document.querySelectorAll(".campo-invalido")
+    const camposObrigatorios = document.querySelectorAll(".campo-obrigatorio")
 
-// Calculando meses vividos
-const diasMesPassado = new Date(anoAtual, mesAtual - 1, 0).getDate()
-
-const mesNascimento = Number(inputMes.value)
-const calcularMeses = () => {
-    const diferencaDeMeses = 12 - mesNascimento
-    
-    if (mesNascimento === mesAtual) {
-        return diferencaDeMeses - 11
-    } else if(diaNascimento <= diaAtual){
-        return diferencaDeMeses + 1
-    }else {
-        return diferencaDeMeses
-    }
-}
-
-// Calculando anos vividos
-const anoNascimento = Number(inputAno.value)
-const calcularAnos = () => {
-    const diferencaDeAnos = anoAtual - anoNascimento
-
-    if (mesNascimento <= mesAtual) {
-        return diferencaDeAnos
-    } else {
-        return diferencaDeAnos - 1
-    }
-}
-
-    // Renderizando todos as informações calculadas
-    const renderAnos = () => {
-        const idAnos = document.getElementById("anos")
-        idAnos.innerHTML = calcularAnos()
-    }
-
-    const renderMeses = () => {
-        const idMeses = document.getElementById("meses")
-        idMeses.innerHTML = calcularMeses()
-    }
-
-    const renderDias = () => {
-        const idDias = document.getElementById("dias")
-        idDias.innerHTML = calcularDias()
-    }
+    // Atualizando valores aplicados nos campos
+    pegarDiaNascimento(inputDia.value)
+    pegarMesNascimento(inputMes.value)
+    pegarAnoNascimento(inputAno.value)
 
     // Previnindo campos vazios ou invalidos
     const valoresNascimento = [diaNascimento, mesNascimento, anoNascimento];
@@ -169,6 +115,9 @@ const calcularAnos = () => {
         labels[1].classList.add("cor-label")
     }
 
+    const dataAtual = new Date()
+    const anoAtual = dataAtual.getFullYear()
+
     if (anoNascimento !== 0 && (anoNascimento > anoAtual || anoNascimento < anoAtual - 100)) {
         camposInvalidos[2].classList.remove("ocultar")
     } else {
@@ -195,7 +144,7 @@ const calcularAnos = () => {
         return
     }
 
-    renderAnos()
-    renderMeses()
-    renderDias()
+    renderAno()
+    renderMes()
+    renderDia()
 }
