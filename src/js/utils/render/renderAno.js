@@ -1,4 +1,4 @@
-import { calcularAno } from "../utils/calcularAno.js"
+import { calcularAno } from "../math/calcularAno.js"
 
 const renderAno = () => {
     const idAno = document.getElementById("ano")

@@ -1,4 +1,4 @@
-import { calcularMes } from "../utils/calcularMes.js"
+import { calcularMes } from "../math/calcularMes.js"
 
 const renderMes = () => {
     const idMes = document.getElementById("mes")

@@ -1,4 +1,4 @@
-import { calcularDia } from "../utils/calcularDia.js"
+import { calcularDia } from "../math/calcularDia.js"
 
 const renderDia = () => {
     const idDia = document.getElementById("dia")
