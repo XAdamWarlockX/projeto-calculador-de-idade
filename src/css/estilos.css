@@ -4,7 +4,6 @@ body{
     align-items: center;
     height: 100vh;
     background-color: hsl(0, 0%, 86%);
-    /* background-color: black; */
     font-family: 'Poppins', sans-serif;
 }
 
@@ -133,14 +132,6 @@ body{
     display: none;
 }
 
-/* .container .informacoes .campos .ocultar{
-    display: none;
-} */
-
 .container .informacoes .campos .mostrar{
     display: block;
 }
-
-/* .container .informacoes .campos .mostrar{
-    display: block;
-} */

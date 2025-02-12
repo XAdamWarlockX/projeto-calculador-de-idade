@@ -1,21 +1,21 @@
-import { inputDia, diaNascimento, pegarDiaNascimento } from "../math/calcularDia.js";
-import { inputMes, mesNascimento, pegarMesNascimento } from "../math/calcularMes.js";
-import { inputAno, anoNascimento, pegarAnoNascimento } from "../math/calcularAno.js";
+import { inputDia, diaNascimento, pegarDiaNascimento } from "./utils/math/calcularDia.js";
+import { inputMes, mesNascimento, pegarMesNascimento } from "./utils/math/calcularMes.js";
+import { inputAno, anoNascimento, pegarAnoNascimento } from "./utils/math/calcularAno.js";
 
-const inputs = document.querySelectorAll(".input")
-const labels = document.querySelectorAll(".label")
-const camposInvalidos = document.querySelectorAll(".campo-invalido")
-const camposObrigatorios = document.querySelectorAll(".campo-obrigatorio")
+const inputs = document.querySelectorAll(".input") as NodeListOf<HTMLInputElement>
+const labels = document.querySelectorAll(".label") as NodeListOf<HTMLLabelElement>
+const camposInvalidos = document.querySelectorAll(".campo-invalido") as NodeListOf<HTMLParagraphElement>
+const camposObrigatorios = document.querySelectorAll(".campo-obrigatorio") as NodeListOf<HTMLParagraphElement>
 
 // Previnindo campos vazios ou invalidos
-const validarCampos = () => {
+const validarCampos = (): true | undefined => {
     pegarDiaNascimento(inputDia.value)
     pegarMesNascimento(inputMes.value)
     pegarAnoNascimento(inputAno.value)
 
-    const valoresNascimento = [diaNascimento, mesNascimento, anoNascimento];
+    const valoresNascimento: number[] = [diaNascimento, mesNascimento, anoNascimento];
 
-    inputs.forEach((input, index) => {
+    inputs.forEach((input, index: number) => {
         if (valoresNascimento[index] === 0 || valoresNascimento[index] < 0) {
             input.classList.remove("cor-borda")
             input.classList.add("cor-borda-erro")
@@ -26,7 +26,7 @@ const validarCampos = () => {
         }
     })
 
-    labels.forEach((label, index) => {
+    labels.forEach((label, index: number) => {
         if (valoresNascimento[index] === 0 || valoresNascimento[index] < 0) {
             label.classList.remove("cor-label")
             label.classList.add("cor-erro")
@@ -37,7 +37,7 @@ const validarCampos = () => {
         }
     })
 
-    camposObrigatorios.forEach((campoObrigatorio, index) => {
+    camposObrigatorios.forEach((campoObrigatorio, index: number) => {
         if (valoresNascimento[index] === 0) {
             campoObrigatorio.classList.remove("ocultar")
 
@@ -46,7 +46,7 @@ const validarCampos = () => {
         }
     })
 
-    const diasMesNascimento = new Date(0, mesNascimento, 0).getDate()
+    const diasMesNascimento: number = new Date(0, mesNascimento, 0).getDate()
 
     if (diaNascimento > diasMesNascimento || diaNascimento < 0) {
         camposInvalidos[0].classList.remove("ocultar")
@@ -76,8 +76,8 @@ const validarCampos = () => {
         labels[1].classList.add("cor-label")
     }
 
-    const dataAtual = new Date()
-    const anoAtual = dataAtual.getFullYear()
+    const dataAtual: Date = new Date()
+    const anoAtual: number = dataAtual.getFullYear()
 
     if (anoNascimento !== 0 && (anoNascimento > anoAtual || anoNascimento < anoAtual - 100)) {
         camposInvalidos[2].classList.remove("ocultar")

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "target": "ES6",
+    "module": "ESNext", // ESNext são importações "import e export"
+  },
+  "include": ["src/ts"],
+  "exclude": ["node_module"]
+}

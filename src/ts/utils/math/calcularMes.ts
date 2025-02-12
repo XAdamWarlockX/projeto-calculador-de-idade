@@ -1,30 +1,30 @@
 import { inputDia, diaNascimento, pegarDiaNascimento } from "./calcularDia.js"
 
-const inputMes = document.getElementById("input-mes")
+const inputMes = document.getElementById("input-mes") as HTMLInputElement
 
 // Difinindo datas que serão usadas
-const dataAtual = new Date()
-const [diaAtual, mesAtual] = [
+const dataAtual: Date = new Date()
+const [diaAtual, mesAtual]: number[] = [
     dataAtual.getDate(),
     dataAtual.getMonth() + 1
 ]
 
 // Função que atualiza o valor do campo
-let mesNascimento = 0
-const pegarMesNascimento = (valor) => {
+let mesNascimento: number = 0
+const pegarMesNascimento = (valor: number | string): void => {
     mesNascimento = Number(valor)
 }
 
 // Calculando meses vividos
-const calcularMes = () => {
-    const mesNascimentoAteDez = 12 - mesNascimento
+const calcularMes = (): number => {
+    const mesNascimentoAteDez: number = 12 - mesNascimento
 
     pegarDiaNascimento(inputDia.value)
     pegarMesNascimento(inputMes.value)
 
-    if (mesAtual === mesNascimento & diaNascimento <= diaAtual) {
+    if (mesAtual === mesNascimento && diaNascimento <= diaAtual) {
         return 0
-    } else if (mesAtual === mesNascimento & diaNascimento > diaAtual) {
+    } else if (mesAtual === mesNascimento && diaNascimento > diaAtual) {
         return mesNascimentoAteDez + mesAtual - 1
     } else if (diaNascimento <= diaAtual) {
         return mesNascimentoAteDez + 1
