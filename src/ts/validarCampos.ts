@@ -97,6 +97,15 @@ const validarCampos = (): true | undefined => {
         labels[2].classList.add("cor-label")
     }
 
+    const anoNasDivididoPor4 = anoNascimento % 4 || anoNascimento % 100 || anoNascimento % 400
+
+    // Verificando se o resultado da divisão é um número inteiro
+    const anoBissexto = Number.isInteger(anoNasDivididoPor4) // true ou false
+
+    if(diaNascimento === 29 && mesNascimento === 2 && anoBissexto){
+        return true
+    }
+
     if (diaNascimento > diasMesNascimento || diaNascimento < 0 || mesNascimento > 12 || mesNascimento < 0 || anoNascimento > anoAtual || anoNascimento < anoAtual - 100) {
         return true
     }
