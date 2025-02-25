@@ -10,7 +10,7 @@ body{
 .container{
     width: 500px;
     padding: 30px;
-    border-radius:  10px 10px 80px 10px;
+    border-radius: 20px 20px 150px 20px;
     background-color: var(--cor-branca);
 }
 
@@ -18,7 +18,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    padding-bottom: 25px;
+    padding-bottom: 20px;
     border-bottom: 1px solid var(--cor-cinza-claro);
     position: relative;
 }
@@ -35,7 +35,7 @@ body{
 }
 
 .container .informacoes .campos .campo .label{
-    font-size: 8px;
+    font-size: 10px;
 }
 
 .container .informacoes .campos .campo .input{
@@ -44,7 +44,7 @@ body{
     padding: 12px;
     border-radius: 5px;
     font-weight: 800;
-    
+    font-size: 16px;
 }
 
 .container .informacoes .campos .campo .input:hover{
@@ -89,7 +89,9 @@ body{
 .container .resultados .resultado{
     display: flex;
     gap: 10px;
-    font-size: 50px;
+    font-size: 70px;
+    align-items: center;
+    height: 80px;
 }
 
 .container .resultados .resultado .cor-numero{

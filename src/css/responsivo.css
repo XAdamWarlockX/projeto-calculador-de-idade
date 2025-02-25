@@ -1,27 +1,72 @@
 @media (max-width: 600px) {
-    body{
+    body {
         padding: 20px;
     }
 
-    .container{
+    .container {
         width: 350px;
+        border-end-end-radius: 100px;
     }
 
-    .container .informacoes{
+    .container .informacoes {
         display: flex;
         justify-content: center;
+        padding-bottom: 30px;
     }
 
-    .container .informacoes .campos .campo .input{
+    .container .informacoes .campos .campo .input {
         width: 95px;
     }
 
-    .container .informacoes .btn{
+    .container .informacoes .btn {
         display: flex;
         justify-content: center;
     }
 
-    .container .resultados .resultado{
+    .container .resultados {
+        padding-top: 40px;
+    }
+
+    .container .resultados .resultado {
+        height: 50px;
         font-size: 40px;
+    }
+}
+
+@media (min-width: 1550px) {
+    .container {
+        width: 700px;
+        padding: 50px;
+        border-radius: 20px 20px 200px 20px;
+    }
+
+    .container .informacoes {
+        padding-bottom: 30px;
+    }
+
+    .container .informacoes .campos {
+        gap: 20px;
+    }
+
+    .container .informacoes .campos .campo .label {
+        font-size: 12px;
+    }
+
+    .container .informacoes .campos .campo .input {
+        width: 140px;
+        height: 60px;
+        padding-left: 18px;
+        font-size: 22px;
+    }
+
+    .container .informacoes .btn #botao {
+        width: 80px;
+        height: 80px;
+        bottom: -40px;
+    }
+
+    .container .resultados .resultado {
+        font-size: 80px;
+        height: 100px;
     }
 }
