@@ -14,7 +14,9 @@ Mais um projeto tirado do Frontend Mentor para praticar o uso de datas no JS.
 
 ## Prévia
 
-<img src="./src/images/previa.png" alt="Prévia do projeto">
+<img height="300" src="./src/images/previa.png" alt="Prévia do projeto"> <img height="300" src="./src/images/previa-mobile.png" alt="Prévia do projeto">
+
+#### <a target="_blank" href="https://projeto-calculador-de-idade.vercel.app/">Clique aqui</a> para testar o projeto.
 
 ## Funcionalidades da aplicação
 
