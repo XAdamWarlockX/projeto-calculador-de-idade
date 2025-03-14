@@ -2,7 +2,7 @@
 
 Mais um projeto tirado do Frontend Mentor para praticar o uso de datas no JS.
 
-## Linguagens usadas
+## Tecnologias usadas 👨‍💻
 
 - HTML <img align="center" alt="HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
 
@@ -12,21 +12,25 @@ Mais um projeto tirado do Frontend Mentor para praticar o uso de datas no JS.
 
 - TypeScript <img align="center" alt="TypeScript" height="30" width="40" src="https://cdn.worldvectorlogo.com/logos/typescript.svg">
 
-## Prévia
+## Prévia Desktop 💻
 
-<img height="300" src="./src/images/previa.png" alt="Prévia do projeto"> <img height="300" src="./src/images/previa-mobile.png" alt="Prévia do projeto">
+<img height="350" src="./src/images/previa-desktop.gif" alt="Prévia do projeto">
+
+## Prévia Mobile 📱
+
+<img src="./src/images/previa-mobile.gif" alt="Prévia do projeto">
 
 #### <a target="_blank" href="https://projeto-calculador-de-idade.vercel.app/">Clique aqui</a> para testar o projeto.
 
-## Funcionalidades da aplicação
+## Funcionalidades da aplicação 💡
 
 Essa aplicação faz cálculos com a sua data de nascimento para determinar dias, meses e anos que você viveu até agora. Dentro desse projeto também existem verificações que te impedem de usar datas inválidas ou campos vazios.
 
-## O que aprendi
+## O que aprendi 🤔
 
 O foco desse projeto foi colocar em prática e aprender mais sobre as manipulações de datas no JS, os cálculos usados no projeto precisavam dessa manipulação de datas, por isso tive que aprender mais e sobre isso.
 
-## Passo a passo para clonar o projeto
+## Passo a passo para clonar o projeto 📝
 
 Para clonar o projeto, você pode usar o terminal de sua preferência. o passo a passo a seguir usa os comandos do gitbash como exemplo.
 
@@ -56,3 +60,4 @@ tsc
 ```
 code .
 ```
+7 - Execute o projeto usando o Live server
